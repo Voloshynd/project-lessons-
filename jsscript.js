@@ -73,7 +73,7 @@ const personalMovieDB = {
 
       // Second method 
       for(let j = 1; j < 2; j++){
-        let genre = prompt(`What is you favorite ganres separated by commas?`);
+        let genre = prompt(`What is you favorite ganres separated by commas?`).toLocaleLowerCase();
         if (genre == null || genre == "") {
           console.log("You provide inccorect data");
           i--;
