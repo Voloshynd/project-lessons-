@@ -83,7 +83,7 @@ const personalMovieDB = {
         }
       }
       personalMovieDB.genres.forEach((item, index)=>{
-        console.log(`Favourite genre ${index + 1} - it's ${item}`);
+        console.log(`Favourite genre ${index + 1} - it's ${item.charAt(0).toUpperCase() + item.slice(1)}`);
       });
 
   },
