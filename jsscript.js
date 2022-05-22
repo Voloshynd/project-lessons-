@@ -55,18 +55,37 @@ const personalMovieDB = {
     }
   },
   writeYourGenres: () => {
-    for (let j = 1; j <= 3; j++) {
-      let genre = prompt(`What is you favorite ganres? ${j}`);
-      if (genre == null || genre == "") {
-        console.log("You provide inccorect data");
-        i--;
-      } else {
-        personalMovieDB.genres[j - 1] = genre;
+    // First method
+    // for (let j = 1; j <= 3; j++) {
+    //   let genre = prompt(`What is you favorite ganres? ${j}`);
+    //   if (genre == null || genre == "") {
+    //     console.log("You provide inccorect data");
+    //     i--;
+    //   } else {
+    //     personalMovieDB.genres[j - 1] = genre;
+    //   }
+    // }
+    // personalMovieDB.genres.forEach((item, index)=>{
+    //     console.log(`Favourite genre ${index + 1} - it's ${item}`);
+    //   });
+
+
+
+      // Second method 
+      for(let j = 1; j < 2; j++){
+        let genre = prompt(`What is you favorite ganres separated by commas?`);
+        if (genre == null || genre == "") {
+          console.log("You provide inccorect data");
+          i--;
+        } else {
+          personalMovieDB.genres = genre.split(", ");
+          personalMovieDB.genres.sort();
+        }
       }
-    }
-    personalMovieDB.genres.forEach((item, index)=>{
+      personalMovieDB.genres.forEach((item, index)=>{
         console.log(`Favourite genre ${index + 1} - it's ${item}`);
       });
+
   },
   toggleVisibleMyDB: function () {
     if (personalMovieDB.privet) {
